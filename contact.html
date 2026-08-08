@@ -6,19 +6,71 @@
     <title>Contact | Gaiaengineering</title>
     <meta name="description" content="The Planetary Systems Research Hub for Biosphere & Anthroposphere Survival.">
     <meta name="generator" content="VitePress v1.6.4">
-    <link rel="preload stylesheet" href="/assets/style.7oh2qmRy.css" as="style">
-    <link rel="preload stylesheet" href="/vp-icons.css" as="style">
-    
+
+    <!-- Prefer loading the CSS as preload then apply as stylesheet for better performance and to avoid broken rel usage -->
+    <link rel="preload" href="/assets/style.7oh2qmRy.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/style.7oh2qmRy.css"></noscript>
+
+    <link rel="preload" href="/vp-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/vp-icons.css"></noscript>
+
     <script type="module" src="/assets/app.BV4wCOxD.js"></script>
     <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="modulepreload" href="/assets/chunks/theme.CQPeVSu0.js">
     <link rel="modulepreload" href="/assets/chunks/framework.BHPdYWoL.js">
     <link rel="modulepreload" href="/assets/contact.md.CRp_Smc4.lean.js">
     <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+
+    <!-- Layout fixes: left-align content, make logo coin-round, ensure hero displays and consistent spacing -->
+    <style>
+      /* Box sizing and base reset */
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; padding: 0; text-align: left; }
+      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
+
+      /* App container: left-aligned with a modest left gutter */
+      #app, .Layout { max-width: none; margin-left: 24px; margin-right: auto; padding: 0 20px 40px 0; text-align: left; }
+
+      /* Constrain main content width but keep it left-aligned */
+      main, .content, .vp-doc { max-width: 980px; margin-left: 0; padding-top: 20px; padding-bottom: 40px; }
+
+      /* Hero: ensure it displays as a horizontal block where possible */
+      .hero, .vp-hero, .hero-section, .Hero { display: flex !important; align-items: center; gap: 20px; padding: 36px 0; margin: 0 0 24px 0; flex-wrap: wrap; text-align: left; }
+
+      /* Title/subtitle spacing */
+      .hero .hero-title, .hero__title, .vp-hero .title, .Hero .title, h1.hero-title { margin: 0 0 8px 0; line-height: 1.1; }
+      .hero .hero-subtitle, .hero__subtitle, .vp-hero .subtitle { margin: 0; color: #444; }
+
+      /* Logo (coin-round): round, fixed size, keep aspect ratio */
+      .logo, .site-logo, .brand, .vp-branding, .hero .logo { width: 96px !important; height: 96px !important; border-radius: 50% !important; overflow: hidden; display: block; flex: 0 0 96px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+      .logo img, .site-logo img, .brand img { width: 100% !important; height: 100% !important; object-fit: cover; border-radius: 50%; display: block; }
+
+      /* Headings and paragraphs rhythm */
+      h1, h2, h3, h4, h5, h6 { margin-top: 1rem; margin-bottom: 0.5rem; line-height: 1.2; }
+      p { margin: 0 0 1rem 0; }
+      ul, ol { margin: 0 0 1rem 1.25rem; padding: 0; }
+      section { margin-bottom: 1.5rem; }
+
+      /* Prevent overflowing media */
+      img, picture, svg, iframe { max-width: 100%; height: auto; }
+
+      /* Improve visibility of skip links when focused */
+      .VPSkipLink.visually-hidden:focus { position: static; clip: auto; width: auto; height: auto; margin: 8px 0; }
+
+      /* Small screens: adjust sizes */
+      @media (max-width: 600px) {
+        .hero, .vp-hero, .hero-section { padding: 20px 0; gap: 12px; }
+        .logo, .site-logo { width: 72px !important; height: 72px !important; flex: 0 0 72px; }
+        main, .content, .vp-doc { padding-left: 8px; padding-right: 8px; }
+        #app, .Layout { margin-left: 12px; padding-right: 12px; }
+      }
+    </style>
+
   </head>
   <body>
-    <div id="app"><div class="Layout" data-v-5d98c3a5><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a><!--]--><!----><header class="VPNav" data-v-5d98c3a5 data-v-ae24b3ad><div class="VPNavBar" data-v-ae24b3ad data-v-6aa21345><div class="wrapper" data-v-6aa21345><div class="container" data-v-6aa21345><div class="title" data-v-6aa21345><div class="VPNavBarTitle has-sidebar" data-v-6aa21345 data-v-1168a8e4><a class="title" href="/" data-v-1168a8e4><!--[--><!--]--><!--[--><img class="VPImage logo" src="/images/gaiaengineering-logo.png" alt data-v-8426fc1a><!--]--><!----><!--[--><!--]--></a></div></div><div class="content" data-v-6aa21345><div class="content-body" data-v-6aa21345><!--[--><!--]--><div class="VPNavBarSearch search" data-v-6aa21345><!--[--><!----><div id="local-search"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search"><span class="DocSearch-Button-Container"><span class="vp-icon DocSearch-Search-Icon"></span><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"><kbd class="DocSearch-Button-Key"></kbd><kbd class="DocSearch-Button-Key">K</kbd></span></button></div><!--]--></div><!----><!----><!----><!----><!----><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-6aa21345 data-v-e5dd9c1c><span class="container" data-v-e5dd9c1c><span class="top" data-v-e5dd9c1c></span><span class="middle" data-v-e5dd9c1c></span><span class="bottom" data-v-e5dd9c1c></span></span></button></div></div></div></div><div class="divider" data-v-6aa21345><div class="divider-line" data-v-6aa21345></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-5d98c3a5 data-v-a6f0e41e><div class="container" data-v-a6f0e41e><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-a6f0e41e><span class="vpi-align-left menu-icon" data-v-a6f0e41e></span><span class="menu-text" data-v-a6f0e41e>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-a6f0e41e data-v-8a42e2b4><button data-v-8a42e2b4>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-5d98c3a5 data-v-319d5ca6><div class="curtain" data-v-319d5ca6></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-319d5ca6><span class="visually-hidden" id="sidebar-aria-label" data-v-319d5ca6> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-c40bc020><section class="VPSidebarItem level-0 has-active" data-v-c40bc020 data-v-b3fd67f8><div class="item" role="button" tabindex="0" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><h2 class="text" data-v-b3fd67f8>Gaiaengineering</h2><!----></div><div class="items" data-v-b3fd67f8><!--[--><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>Home</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/biosphere" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>The Biosphere</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/papers" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>Papers</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="/contact" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>Contact</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-5d98c3a5 data-v-1428d186><div class="VPDoc has-sidebar" data-v-1428d186 data-v-39a288b8><!--[--><!--]--><div class="container" data-v-39a288b8><!----><div class="content" data-v-39a288b8><div class="content-container" data-v-39a288b8><!--[--><!--]--><main class="main" data-v-39a288b8><div style="position:relative;" class="vp-doc _contact" data-v-39a288b8><div><h1 id="contact" tabindex="-1">Contact <a class="header-anchor" href="#contact" aria-label="Permalink to &quot;Contact&quot;">​</a></h1><p><em>This page has not been written yet.</em></p><p>It is a placeholder for contact details. The content here will be written later.</p></div></div></main><footer class="VPDocFooter" data-v-39a288b8 data-v-e257564d><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e257564d><span class="visually-hidden" id="doc-footer-aria-label" data-v-e257564d>Pager</span><div class="pager" data-v-e257564d><a class="VPLink link pager-link prev" href="/papers" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>Previous page</span><span class="title" data-v-e257564d>Papers</span><!--]--></a></div><div class="pager" data-v-e257564d><!----></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><!----><!--[--><!--]--></div></div>
-    <script>window.__VP_HASH_MAP__=JSON.parse("{\"biosphere.md\":\"CfxCEF-g\",\"contact.md\":\"CRp_Smc4\",\"index.md\":\"DkHQmSiU\",\"papers.md\":\"DXszoo6v\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"Gaiaengineering\",\"description\":\"The Planetary Systems Research Hub for Biosphere & Anthroposphere Survival.\",\"base\":\"/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":false,\"themeConfig\":{\"logo\":\"/images/gaiaengineering-logo.png\",\"siteTitle\":false,\"sidebar\":[{\"text\":\"Gaiaengineering\",\"items\":[{\"text\":\"Home\",\"link\":\"/\"},{\"text\":\"The Biosphere\",\"link\":\"/biosphere\"},{\"text\":\"Papers\",\"link\":\"/papers\"},{\"text\":\"Contact\",\"link\":\"/contact\"}]}],\"aside\":false,\"outline\":false,\"search\":{\"provider\":\"local\"}},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":true}");</script>
+    <div id="app"><div class="Layout" data-v-5d98c3a5><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to[...]
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"biosphere.md\":\"CfxCEF-g\",\"contact.md\":\"CRp_Smc4\",\"index.md\":\"DkHQmSiU\",\"papers.md\":\"DXszoo6v\"}");window.__VP_SITE_DATA__=JSON.parse("{[...]}");
+    </script>
     
   </body>
 </html>
