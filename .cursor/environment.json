@@ -1,0 +1,16 @@
+{
+  "name": "Gaiaengineering static site",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "web",
+      "command": "npm run dev"
+    }
+  ],
+  "ports": [
+    {
+      "name": "web",
+      "port": 8080
+    }
+  ]
+}

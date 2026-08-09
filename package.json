@@ -1,0 +1,13 @@
+{
+  "name": "gaiaengineering-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static hosting/dev preview for the pre-built Gaiaengineering (VitePress) site.",
+  "scripts": {
+    "dev": "serve --listen tcp://0.0.0.0:8080 .",
+    "start": "serve --listen tcp://0.0.0.0:8080 ."
+  },
+  "devDependencies": {
+    "serve": "14.2.4"
+  }
+}
