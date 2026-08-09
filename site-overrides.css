@@ -29,9 +29,18 @@
   object-fit: contain;
 }
 
-/* Left-align the site. Above 1440px the theme splits the leftover viewport
-   width into equal gutters to centre the layout; collapse those gutters so
-   the sidebar starts at the left edge and the content grows to the right. */
+/* Left-align the site. The nav bar caps its row at the layout width and
+   centres it with auto margins; let it fill the viewport instead so the logo
+   lines up with the sidebar links below it. */
+#app .VPNavBar .wrapper > .container {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+}
+
+/* Above 1440px the theme splits the leftover viewport width into equal
+   gutters to centre the layout; collapse those gutters so the sidebar starts
+   at the left edge and the content grows to the right. */
 @media (min-width: 1440px) {
   #app .VPSidebar,
   #app .VPNavBar.has-sidebar .container > .title {
