@@ -12,6 +12,30 @@
     <script type="module" src="/assets/app.BV4wCOxD.js"></script>
     <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
     <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+
+    <style>
+      /* Left-align the site: the theme centers several layout containers with
+         "margin: 0 auto" and centers the doc content column with
+         "justify-content: center" on wide screens. Override both so the nav bar,
+         sidebar and page content hug the left edge instead of floating in the
+         middle of the viewport. */
+      :root { --vp-layout-max-width: 100vw; }
+      .container { margin-left: 0 !important; }
+      .VPDoc .container { justify-content: flex-start !important; }
+
+      /* Logo: the wordmark image (gaiaengineering-logo.png) is a wide 355x94
+         graphic with a round coin on its left edge. Rather than stretching the
+         whole image -- which turns the round coin into a squashed oval -- crop
+         and position it in a square frame so only that coin is shown in the
+         nav bar, rendered as a true circle. */
+      .VPNavBarTitle .VPImage.logo {
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        object-position: left center;
+        border-radius: 50%;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
