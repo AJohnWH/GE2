@@ -1,0 +1,72 @@
+/*
+ * Site overrides, loaded after the generated VitePress theme stylesheet.
+ *
+ * Selectors are prefixed with #app so they outrank the theme's scoped
+ * [data-v-*] rules on specificity alone, without resorting to !important.
+ * The nav bar nests an <a class="title"> inside <div class="title"> and puts
+ * another .container inside its hamburger button, so the rules below use
+ * child combinators to address the intended element only.
+ */
+
+/* The logo artwork is 355x94 and has a circular coin at its left edge. The
+   theme's nav title column leaves only 208px of usable width, and the global
+   `img { max-width: 100% }` rule shrank the logo horizontally to fit it,
+   flattening the coin into an oval. Widening the left column gives the logo
+   room to sit at its natural proportions. */
+:root {
+  --vp-sidebar-width: 344px;
+}
+
+/* The nav bar sizes its title cell to the logo on narrow screens, where a
+   272px logo pushes the search box past the right edge of the viewport, so
+   the width also backs off once there is no longer room for it. The height
+   follows from the aspect ratio, so the coin stays circular at every size. */
+#app .VPNavBarTitle .logo {
+  width: min(272px, calc(100vw - 140px)); /* 272px is 72px tall at 355:94 */
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 355 / 94;
+  object-fit: contain;
+}
+
+/* Left-align the site. Above 1440px the theme splits the leftover viewport
+   width into equal gutters to centre the layout; collapse those gutters so
+   the sidebar starts at the left edge and the content grows to the right. */
+@media (min-width: 1440px) {
+  #app .VPSidebar,
+  #app .VPNavBar.has-sidebar .container > .title {
+    padding-left: 32px;
+    width: var(--vp-sidebar-width);
+  }
+
+  #app .VPNavBar.has-sidebar .container > .content {
+    padding-left: var(--vp-sidebar-width);
+    padding-right: 32px;
+  }
+
+  #app .VPNavBar.has-sidebar > .divider,
+  #app .VPLocalNav.has-sidebar {
+    padding-left: var(--vp-sidebar-width);
+  }
+
+  #app .VPContent.has-sidebar {
+    padding-left: var(--vp-sidebar-width);
+    padding-right: 0;
+  }
+}
+
+/* The article column is centred in whatever space the gutters leave over.
+   Pin it to the left, and hold it at 1040px: that is the width the centred
+   layout resolved to at every viewport of 1440px and above, so line length
+   is unchanged and only the alignment moves. */
+@media (min-width: 1280px) {
+  #app .VPDoc > .container {
+    justify-content: flex-start;
+  }
+}
+
+#app .content-container {
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 1040px;
+}
