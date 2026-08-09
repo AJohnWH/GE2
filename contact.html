@@ -17,40 +17,53 @@
     
     <!-- Site layout: left-align content; stretch nav logo so left coin reads round -->
     <style>
-      /* Left-align page content (VitePress centers the doc container by default) */
-      .VPDoc .container { justify-content: flex-start !important; }
-      .VPDoc .container,
-      .VPDoc:not(.has-sidebar) .container {
+      /* Left-align: undo VitePress large-screen centering gutters */
+      @media (min-width: 1440px) {
+        .VPContent.has-sidebar {
+          padding-left: var(--vp-sidebar-width) !important;
+          padding-right: 32px !important;
+        }
+        .VPNavBar.has-sidebar .title {
+          padding-left: 32px !important;
+          width: var(--vp-sidebar-width) !important;
+        }
+        .VPNavBar.has-sidebar .content,
+        .VPNavBar.has-sidebar .divider {
+          padding-left: var(--vp-sidebar-width) !important;
+          padding-right: 32px !important;
+        }
+        .VPSidebar {
+          padding-left: 32px !important;
+          width: var(--vp-sidebar-width) !important;
+        }
+      }
+      .VPDoc .container {
+        justify-content: flex-start !important;
         margin-left: 0 !important;
         margin-right: auto !important;
-      }
-      .VPContent.has-sidebar {
-        padding-left: var(--vp-sidebar-width) !important;
-        padding-right: 24px !important;
       }
       .vp-doc, .VPDoc .content, .VPDoc .content-container {
         text-align: left;
       }
 
-      /* Nav logo: keep wide banner aspect; stretch east-west so coin is round */
-      .VPNavBar.has-sidebar .title {
-        /* Give the wide logo room; do not clip/squash into sidebar width */
-        overflow: visible;
-        min-width: 320px;
-        width: max(320px, var(--vp-sidebar-width)) !important;
-      }
+      /*
+        Nav logo is a wide 355x94 banner. The sidebar title box is narrower than
+        the natural width at height:72px, so the flex item was squashed and the
+        left coin became a vertical oval. Lock aspect ratio, prevent shrink, and
+        stretch east-west so the coin reads round.
+      */
+      .VPNavBar.has-sidebar .title,
       .VPNavBarTitle .title {
-        overflow: visible;
+        overflow: visible !important;
       }
       img.VPImage.logo,
       .VPNavBarTitle .logo {
-        height: 72px !important;
-        width: auto !important;
+        height: 64px !important;
+        width: calc(64px * 355 / 94 * 1.22) !important; /* stretch ~22% wider */
         max-width: none !important;
-        object-fit: fill; /* allow non-uniform scale via transform */
+        flex-shrink: 0 !important;
+        object-fit: fill !important;
         display: block;
-        transform: scaleX(1.14);
-        transform-origin: left center;
       }
     </style>
 
