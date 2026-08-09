@@ -48,9 +48,9 @@
 
       /*
         Nav logo is a wide 355x94 banner. The sidebar title flex box was narrower
-        than the natural width at height:72px, which squashed the image and made
-        the left coin a vertical oval. Lock true aspect ratio, prevent flex
-        shrink, and apply a mild east-west stretch so the coin reads round.
+        than the natural logo width, which squashed the image and made the left
+        coin a vertical oval. Prevent flex shrink, keep intrinsic aspect ratio,
+        and stretch slightly east-west so the coin reads round.
       */
       .VPNavBar.has-sidebar .title,
       .VPNavBarTitle .title {
@@ -59,12 +59,13 @@
       img.VPImage.logo,
       .VPNavBarTitle .logo {
         height: 64px !important;
-        /* natural width * 1.05 mild stretch for round coin */
-        width: calc(64px * 355 / 94 * 1.05) !important;
+        width: auto !important;
         max-width: none !important;
         flex-shrink: 0 !important;
-        object-fit: fill !important;
+        object-fit: contain !important;
         display: block;
+        transform: scaleX(1.08);
+        transform-origin: left center;
       }
     </style>
 
