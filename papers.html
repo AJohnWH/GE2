@@ -14,6 +14,46 @@
     <link rel="modulepreload" href="/assets/chunks/theme.CQPeVSu0.js">
     <link rel="modulepreload" href="/assets/chunks/framework.BHPdYWoL.js">
     <link rel="modulepreload" href="/assets/papers.md.DXszoo6v.lean.js">
+    
+    <!-- Site layout: left-align content; stretch nav logo so left coin reads round -->
+    <style>
+      /* Left-align page content (VitePress centers the doc container by default) */
+      .VPDoc .container { justify-content: flex-start !important; }
+      .VPDoc .container,
+      .VPDoc:not(.has-sidebar) .container {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+      }
+      .VPContent.has-sidebar {
+        padding-left: var(--vp-sidebar-width) !important;
+        padding-right: 24px !important;
+      }
+      .vp-doc, .VPDoc .content, .VPDoc .content-container {
+        text-align: left;
+      }
+
+      /* Nav logo: keep wide banner aspect; stretch east-west so coin is round */
+      .VPNavBar.has-sidebar .title {
+        /* Give the wide logo room; do not clip/squash into sidebar width */
+        overflow: visible;
+        min-width: 320px;
+        width: max(320px, var(--vp-sidebar-width)) !important;
+      }
+      .VPNavBarTitle .title {
+        overflow: visible;
+      }
+      img.VPImage.logo,
+      .VPNavBarTitle .logo {
+        height: 72px !important;
+        width: auto !important;
+        max-width: none !important;
+        object-fit: fill; /* allow non-uniform scale via transform */
+        display: block;
+        transform: scaleX(1.14);
+        transform-origin: left center;
+      }
+    </style>
+
     <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
   </head>
   <body>
