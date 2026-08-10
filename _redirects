@@ -1,0 +1,4 @@
+# Netlify / Cloudflare Pages clean URL rewrites
+/biosphere   /biosphere.html   200
+/papers      /papers.html      200
+/contact     /contact.html     200

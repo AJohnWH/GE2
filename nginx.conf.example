@@ -1,0 +1,13 @@
+# Example nginx server block for VitePress clean URLs.
+# Include this inside your server { } block.
+#
+# server {
+#   listen 80;
+#   server_name example.com;
+#   root /var/www/ge2;
+#   index index.html;
+#
+#   location / {
+#     try_files $uri $uri/ $uri.html =404;
+#   }
+# }
