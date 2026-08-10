@@ -12,6 +12,7 @@
 
     <link rel="preload" href="/vp-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/vp-icons.css"></noscript>
+    <link rel="stylesheet" href="/site-layout.css">
 
     <script type="module" src="/assets/app.BV4wCOxD.js"></script>
     <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
@@ -20,50 +21,6 @@
     <link rel="modulepreload" href="/assets/contact.md.CRp_Smc4.lean.js">
     <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
 
-    <!-- Layout fixes: left-align content, make logo round, ensure hero displays and consistent spacing -->
-    <style>
-      /* Box sizing and base reset */
-      *, *::before, *::after { box-sizing: border-box; }
-      html, body { height: 100%; margin: 0; padding: 0; text-align: left; }
-      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; }
-
-      /* App container: left-aligned with a modest left gutter */
-      #app, .Layout { max-width: none; margin-left: 24px; margin-right: auto; padding: 0 20px 40px 0; text-align: left; }
-
-      /* Constrain main content width but keep it left-aligned */
-      main, .content, .vp-doc { max-width: 980px; margin-left: 0; padding-top: 20px; padding-bottom: 40px; }
-
-      /* Hero: ensure it displays as a horizontal block where possible */
-      .hero, .vp-hero, .hero-section, .Hero { display: flex !important; align-items: center; gap: 20px; padding: 36px 0; margin: 0 0 24px 0; flex-wrap: wrap; text-align: left; }
-
-      /* Title/subtitle spacing */
-      .hero .hero-title, .hero__title, .vp-hero .title, .Hero .title, h1.hero-title { margin: 0 0 8px 0; line-height: 1.1; }
-      .hero .hero-subtitle, .hero__subtitle, .vp-hero .subtitle { margin: 0; color: #444; }
-
-      /* Logo (coin-round): round, fixed size, keep aspect ratio */
-      .logo, .site-logo, .brand, .vp-branding, .hero .logo { width: 96px !important; height: 96px !important; border-radius: 50% !important; overflow: hidden; display: block; flex: 0 0 96px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-      .logo img, .site-logo img, .brand img { width: 100% !important; height: 100% !important; object-fit: cover; border-radius: 50%; display: block; }
-
-      /* Headings and paragraphs rhythm */
-      h1, h2, h3, h4, h5, h6 { margin-top: 1rem; margin-bottom: 0.5rem; line-height: 1.2; }
-      p { margin: 0 0 1rem 0; }
-      ul, ol { margin: 0 0 1rem 1.25rem; padding: 0; }
-      section { margin-bottom: 1.5rem; }
-
-      /* Prevent overflowing media */
-      img, picture, svg, iframe { max-width: 100%; height: auto; }
-
-      /* Improve visibility of skip links when focused */
-      .VPSkipLink.visually-hidden:focus { position: static; clip: auto; width: auto; height: auto; margin: 8px 0; }
-
-      /* Small screens: adjust sizes */
-      @media (max-width: 600px) {
-        .hero, .vp-hero, .hero-section { padding: 20px 0; gap: 12px; }
-        .logo, .site-logo { width: 72px !important; height: 72px !important; flex: 0 0 72px; }
-        main, .content, .vp-doc { padding-left: 8px; padding-right: 8px; }
-        #app, .Layout { margin-left: 12px; padding-right: 12px; }
-      }
-    </style>
 
   </head>
   <body>
