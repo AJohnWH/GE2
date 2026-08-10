@@ -21,7 +21,7 @@
     <link rel="modulepreload" href="/assets/contact.md.CRp_Smc4.lean.js">
     <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
 
-    <!-- Layout fixes: left-align content, make logo coin-round, ensure hero displays and consistent spacing -->
+    <!-- Layout fixes: left-align content, make logo round, ensure hero displays and consistent spacing -->
     <style>
       /* Box sizing and base reset */
       *, *::before, *::after { box-sizing: border-box; }
@@ -41,9 +41,9 @@
       .hero .hero-title, .hero__title, .vp-hero .title, .Hero .title, h1.hero-title { margin: 0 0 8px 0; line-height: 1.1; }
       .hero .hero-subtitle, .hero__subtitle, .vp-hero .subtitle { margin: 0; color: #444; }
 
-      /* Logo (coin-round): round, fixed size, keep aspect ratio */
-      .logo, .site-logo, .brand, .vp-branding, .hero .logo { width: 96px !important; height: 96px !important; border-radius: 50% !important; overflow: hidden; display: block; flex: 0 0 96px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-      .logo img, .site-logo img, .brand img { width: 100% !important; height: 100% !important; object-fit: cover; border-radius: 50%; display: block; }
+      /* Logo: round, fixed size, keep aspect ratio. Stretch the image slightly east-west to avoid squashed artwork. */
+      .logo, .site-logo, .brand, .vp-branding, .hero .logo { width: 96px !important; height: 96px !important; border-radius: 50% !important; overflow: hidden; display: block; flex: 0 0 96px; }
+      .logo img, .site-logo img, .brand img { width: 100% !important; height: 100% !important; object-fit: cover; border-radius: 50%; display: block; transform: scaleX(1.08); transform-origin: center; }
 
       /* Headings and paragraphs rhythm */
       h1, h2, h3, h4, h5, h6 { margin-top: 1rem; margin-bottom: 0.5rem; line-height: 1.2; }
@@ -61,6 +61,7 @@
       @media (max-width: 600px) {
         .hero, .vp-hero, .hero-section { padding: 20px 0; gap: 12px; }
         .logo, .site-logo { width: 72px !important; height: 72px !important; flex: 0 0 72px; }
+        .logo img, .site-logo img, .brand img { transform: scaleX(1.05); }
         main, .content, .vp-doc { padding-left: 8px; padding-right: 8px; }
         #app, .Layout { margin-left: 12px; padding-right: 12px; }
       }
